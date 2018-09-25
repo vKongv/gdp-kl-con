@@ -11,14 +11,14 @@
     "duration": 60,
     "title": "Welcome Greeting",
     "note": "",
-    "speakers": []
+    "speakers": ["Layla"]
   },
   {
     "time": "9:00 AM",
     "duration": 120,
     "title": "Product Presentations",
-    "note": "",
-    "speakers": []
+    "note": "Company Profile and Reviews, Roles Insights, SONIC, Education, Jora Local, Discovery",
+    "speakers": ["Mat", "Mariana", "Jacqui", "Rafael", "Rob"]
   },
   {
     "time": "11:00 AM",
@@ -46,7 +46,7 @@
     "duration": 105,
     "title": "Workshop: Working together across borders, how can we be better?",
     "note": "",
-    "speakers": []
+    "speakers": ["Mathew Adams"]
   },
   {
     "time": "3:45 PM",
