@@ -1,56 +1,65 @@
 [
   {
-    "time": "8:00 - 8:30 AM",
+    "time": "8:00 AM",
+    "duration": 30,
     "title": "Breakfast",
     "note": "",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "8:30 - 9:00 AM",
+    "time": "8:30 AM",
+    "duration": 30,
     "title": "Getting to know you better!",
     "note": "Just chat!",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "9:00 - 10:00 AM",
+    "time": "9:00 AM",
+    "duration": 60,
     "title": "Mini Design Sprint",
     "note": "",
-    "speaker": "Layla"
+    "speakers": ["Layla"]
   },
   {
-    "time": "10:00 - 11:00 AM",
+    "time": "10:00 AM",
+    "duration": 60,
     "title": "Playback teams share ideas",
     "note": "",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "11:00 - 12:00 PM",
+    "time": "11:00 PM",
+    "duration": 60,
     "title": "AI workshop",
     "note": "",
-    "speaker": "Diego"
+    "speakers": ["Diego"]
   },
   {
-    "time": "12:00 - 1:00 PM",
+    "time": "12:00 PM",
+    "duration": 60,
     "title": "Lunch & Prioritization (Voting on Ideas)",
     "note": "",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "1:00 - 2:00 PM",
+    "time": "1:00 PM",
+    "duration": 60,
     "title": "Technology team rules of play workshop (like Discovery) & Present Back",
     "note": "",
-    "speaker": "Gil"
+    "speakers": ["Gil"]
   },
   {
-    "time": "2:00 - 3:45 PM",
+    "time": "2:00 PM",
+    "duration": 105,
     "title": "Strategy and vision session",
     "note": "",
-    "speaker": "Layla/Jerome"
+    "speakers": ["Layla", "Jerome"]
   },
   {
-    "time": "3:45 - 4:00 PM",
+    "time": "3:45 PM",
+    "duration": 15,
     "title": "Tea break",
     "note": "",
-    "speaker": ""
+    "speakers": []
   }
 ]

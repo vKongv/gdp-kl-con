@@ -1,62 +1,72 @@
 [
   {
-    "time": "8:00 - 8:30 AM",
+    "time": "8:00 AM",
+    "duration": 30,
     "title": "Breakfast and Chit-Chat",
     "note": "",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "8:30 - 9:00 AM",
+    "time": "8:30 AM",
+    "duration": 60,
     "title": "Welcome Greeting",
     "note": "",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "9:00 - 11:00 AM",
+    "time": "9:00 AM",
+    "duration": 120,
     "title": "Product Presentations",
     "note": "",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "11:00 - 12:00 PM",
+    "time": "11:00 AM",
+    "duration": 60,
     "title": "Emmett Fireside Chat with Layla",
     "note": "",
-    "speaker": "Emmett & Layla"
+    "speakers": ["Emmett", "Layla"]
   },
   {
-    "time": "12:00 - 1:00 PM",
+    "time": "12:00 PM",
+    "duration": 60,
     "title": "Lunch",
     "note": "",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "1:00 - 2:00 PM",
+    "time": "1:00 PM",
+    "duration": 60,
     "title": "Competitor review Workshop",
     "note": "",
-    "speaker": "Eddy"
+    "speakers": ["Eddy"]
   },
   {
-    "time": "2:00 - 3:45 PM",
+    "time": "2:00 PM",
+    "duration": 105,
     "title": "Workshop: Working together across borders, how can we be better?",
     "note": "",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "3:45 - 4:00 PM",
+    "time": "3:45 PM",
+    "duration": 15,
     "title": "Tea break",
     "note": "",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "4:00 - 6:00 PM",
+    "time": "4:00 PM",
+    "duration": 120,
     "title": "Team building and free activity",
     "note": "",
-    "speaker": ""
+    "speakers": []
   },
   {
-    "time": "6:00 - 8:00 PM",
+    "time": "6:00 PM",
+    "duration": 120,
     "title": "Dinner",
     "note": "",
-    "speaker": ""
+    "speakers": []
   }
 ]
