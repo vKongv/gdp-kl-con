@@ -24,9 +24,11 @@ const theme = createMuiTheme({
 const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
-      <Button color="primary">OK</Button>
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
     </MuiThemeProvider>
   );
-}
+};
 
 export default App;
