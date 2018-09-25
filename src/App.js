@@ -3,7 +3,8 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import indigo from "@material-ui/core/colors/indigo";
 import pink from "@material-ui/core/colors/pink";
 import red from "@material-ui/core/colors/red";
-import Button from "@material-ui/core/Button";
+
+import Main from "./pages/Main/Main";
 
 // NOTE: This is the default theme, we can change it to suit us. Ref: https://material-ui.com/customization/themes/
 const theme = createMuiTheme({
@@ -24,9 +25,7 @@ const theme = createMuiTheme({
 const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
+      <Main />
     </MuiThemeProvider>
   );
 };
