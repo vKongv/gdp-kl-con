@@ -5,7 +5,7 @@ import grid from "./grid_seamless.png";
 import Agenda from "../../components/Agenda/Agenda";
 
 const activeDayStyle = {
-  backgroundColor: "rgb(71, 104, 253, 0.8)",
+  backgroundColor: "rgba(71, 104, 253, 0.8)",
   color: "#fff",
   padding: "30px",
   textAlign: "center",
@@ -14,7 +14,7 @@ const activeDayStyle = {
 };
 
 const inactiveDayStyle = {
-  backgroundColor: "rgb(71, 104, 253, 0.3)",
+  backgroundColor: "rgba(71, 104, 253, 0.3)",
   color: "#fff",
   padding: "30px",
   textAlign: "center",
@@ -85,7 +85,7 @@ class Main extends Component {
         >
           <div
             style={{
-              backgroundColor: "rgb(255, 255, 255, 0.5)",
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
               height: "100%",
               paddingTop: "10px",
               paddingBottom: "10px"

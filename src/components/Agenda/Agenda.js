@@ -29,7 +29,7 @@ const Agenda = ({ schedules }) => {
                   <span style={listTextStyle}>{schedule.speakers.join(" • ")}</span>
                 )}
                 {schedule.note && (
-                  <span style={{ ...listTextStyle, color: "rgb(71, 104, 253, 0.8)" }}>
+                  <span style={{ ...listTextStyle, color: "rgba(71, 104, 253, 0.8)" }}>
                     {schedule.note}
                   </span>
                 )}
