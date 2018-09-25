@@ -1,21 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import indigo from "@material-ui/core/colors/indigo";
+import pink from "@material-ui/core/colors/pink";
+import red from "@material-ui/core/colors/red";
+import Button from "@material-ui/core/Button";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+// NOTE: This is the default theme, we can change it to suit us. Ref: https://material-ui.com/customization/themes/
+const theme = createMuiTheme({
+  palette: {
+    primary: indigo,
+    secondary: pink,
+    error: red,
+    // Used by `getContrastText()` to maximize the contrast between the background and
+    // the text.
+    contrastThreshold: 3,
+    // Used to shift a color's luminance by approximately
+    // two indexes within its tonal palette.
+    // E.g., shift from Red 500 to Red 300 or Red 700.
+    tonalOffset: 0.2
   }
+});
+
+const App = () => {
+  return (
+    <MuiThemeProvider theme={theme}>
+      <Button color="primary">OK</Button>
+    </MuiThemeProvider>
+  );
 }
 
 export default App;
