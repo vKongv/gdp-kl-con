@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import grid from "./grid_seamless.png";
 import Agenda from "../../components/Agenda/Agenda";
 
 const activeDayStyle = {
@@ -72,10 +73,27 @@ class Main extends Component {
   render() {
     const { schedules } = this.state;
     return (
-      <div style={{ padding: "10px 0" }}>
-        <div style={{ textAlign: "center" }}>
-          <h2>Schedule</h2>
-          <p>KL CON 2018</p>
+      <div>
+        <div
+          style={{
+            textAlign: "center",
+            backgroundPosition: "right 1px top -4px",
+            backgroundRepeat: "repeat",
+            backgroundImage: `url(${grid})`,
+            height: "100%"
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "rgb(255, 255, 255, 0.5)",
+              height: "100%",
+              paddingTop: "10px",
+              paddingBottom: "10px"
+            }}
+          >
+            <h2>Schedule</h2>
+            <p>KL CON 2018</p>
+          </div>
         </div>
         <div style={{ display: "flex" }}>
           <div
