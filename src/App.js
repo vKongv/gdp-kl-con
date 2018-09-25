@@ -1,5 +1,11 @@
 import React from "react";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 import indigo from "@material-ui/core/colors/indigo";
 import pink from "@material-ui/core/colors/pink";
 import red from "@material-ui/core/colors/red";
@@ -25,7 +31,13 @@ const theme = createMuiTheme({
 const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
-      <Main />
+      <Router>
+        <Switch>
+          <Route path="/dayone" component={Main} />
+          <Route path="/daytwo" component={Main} />
+          <Redirect from="*" to="/dayone" />
+        </Switch>
+      </Router>
     </MuiThemeProvider>
   );
 };
