@@ -1,7 +1,55 @@
 [
   {
     "time": "8:00 - 8:30 AM",
-    "title": "Breakfast and Chit-Chat",
+    "title": "Breakfast",
+    "note": "",
+    "speaker": ""
+  },
+  {
+    "time": "8:30 - 9:00 AM",
+    "title": "Getting to know you better!",
+    "note": "Just chat!",
+    "speaker": ""
+  },
+  {
+    "time": "9:00 - 10:00 AM",
+    "title": "Mini Design Sprint",
+    "note": "",
+    "speaker": "Layla"
+  },
+  {
+    "time": "10:00 - 11:00 AM",
+    "title": "Playback teams share ideas",
+    "note": "",
+    "speaker": ""
+  },
+  {
+    "time": "11:00 - 12:00 PM",
+    "title": "AI workshop",
+    "note": "",
+    "speaker": "Diego"
+  },
+  {
+    "time": "12:00 - 1:00 PM",
+    "title": "Lunch & Prioritization (Voting on Ideas)",
+    "note": "",
+    "speaker": ""
+  },
+  {
+    "time": "1:00 - 2:00 PM",
+    "title": "Technology team rules of play workshop (like Discovery) & Present Back",
+    "note": "",
+    "speaker": "Gil"
+  },
+  {
+    "time": "2:00 - 3:45 PM",
+    "title": "Strategy and vision session",
+    "note": "",
+    "speaker": "Layla/Jerome"
+  },
+  {
+    "time": "3:45 - 4:00 PM",
+    "title": "Tea break",
     "note": "",
     "speaker": ""
   }
