@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { withStyles } from "@material-ui/core/styles";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import Typography from '@material-ui/core/Typography';
 
 import grid from "./grid_seamless.png";
 import Agenda from "../../components/Agenda/Agenda";
@@ -25,6 +29,31 @@ const inactiveDayStyle = {
 const dayOnePath = "/dayone";
 const dayTwoPath = "/daytwo";
 
+const classes = theme => {
+  console.log(theme);
+  return {
+    navBar: {
+      bottom: "-2px",
+      height: "60px",
+      right: "0px",
+      zIndex: "2",
+      // width: "auto",
+      top: "auto",
+      backgroundColor: theme.palette.primary.main,
+      position: "fixed",
+      width: "100%",
+      color: "#fff"
+    },
+    title: {
+      color: theme.palette.secondary.main,
+    },
+    navLabel: {
+      color: '#fff',
+      fontSize: theme.typography.subheading.fontSize
+    }
+  };
+};
+
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -34,43 +63,50 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    if (this.isDayOne()) {
-      this.fetchDayOneSchedule();
-    } else {
-      this.fetchDayTwoSchedule();
+    const { location } = this.props;
+    this.fetchSchedule(location.pathname);
+  }
+
+  isDayOne = (pathname) => {
+    return pathname === dayOnePath;
+  };
+
+  fetchSchedule = (pathname) => {
+    let apiPath;
+    switch(pathname) {
+      case dayOnePath: 
+        apiPath = '/data/dayone.json';
+        break;
+      case dayTwoPath: 
+        apiPath = '/data/daytwo.json';
+        break;
+      default:
+        break;
+    }
+    axios.get(apiPath).then(res => {
+      this.setState({ schedules: res.data });
+    });
+  }
+
+  handleChange = (event, value) => {
+    const { history, location } = this.props;
+    if (value !== location.pathname) {
+      history.push(value);
+      this.fetchSchedule(value);
+    }
+  };
+
+  generateDayString = () => {
+    const { location } = this.props;
+    switch(location.pathname) {
+      case dayOnePath: return 'Day One';
+      case dayTwoPath: return 'Day Two';
+      default: return 'Ah you must be from the future';
     }
   }
 
-  isDayOne = () => {
-    const { location } = this.props;
-    return location.pathname === dayOnePath;
-  };
-
-  fetchDayOneSchedule = () => {
-    axios.get("/data/dayone.json").then(res => {
-      this.setState({ schedules: res.data });
-    });
-  };
-
-  fetchDayTwoSchedule = () => {
-    axios.get("/data/daytwo.json").then(res => {
-      this.setState({ schedules: res.data });
-    });
-  };
-
-  handleOnDayOneClick = () => {
-    const { history } = this.props;
-    history.push(dayOnePath);
-    this.fetchDayOneSchedule();
-  };
-
-  handleOnDayTwoClick = () => {
-    const { history } = this.props;
-    history.push(dayTwoPath);
-    this.fetchDayTwoSchedule();
-  };
-
   render() {
+    const { classes, location } = this.props;
     const { schedules } = this.state;
     return (
       <div>
@@ -83,42 +119,44 @@ class Main extends Component {
             height: "100%"
           }}
         >
-          <div
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-              height: "100%",
-              paddingTop: "10px",
-              paddingBottom: "10px"
-            }}
-          >
-            <h2>Schedule</h2>
-            <p>KL CON 2018</p>
+            <div
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.5)",
+                height: "100%",
+                paddingTop: "10px",
+                paddingBottom: "10px"
+              }}
+            >
+              <h2>Schedule</h2>
+              <p>KL CON 2018</p>
+            </div>
           </div>
-        </div>
-        <div style={{ display: "flex" }}>
-          <div
-            style={this.isDayOne() ? activeDayStyle : inactiveDayStyle}
-            onClick={this.handleOnDayOneClick}
-          >
-            02
-            <br />
-            <br />
-            October
+          <Typography variant="display2" gutterBottom align="center" color="primary">
+            {this.generateDayString()}
+          </Typography>
+          <div style={{ marginBottom: '60px' }}>
+          <Agenda schedules={schedules} />
           </div>
-          <div
-            style={!this.isDayOne() ? activeDayStyle : inactiveDayStyle}
-            onClick={this.handleOnDayTwoClick}
-          >
-            03
-            <br />
-            <br />
-            October
-          </div>
-        </div>
-        <Agenda schedules={schedules} />
+        <BottomNavigation
+          className={classes.navBar}
+          value={location.pathname}
+          onChange={this.handleChange}
+          showLabels
+        >
+          <BottomNavigationAction
+            label="Day One"
+            value={dayOnePath}
+            classes={{ label: classes.navLabel }}
+          />
+          <BottomNavigationAction
+            label="Day Two"
+            value={dayTwoPath}
+            classes={{ label: classes.navLabel }}
+          />
+        </BottomNavigation>
       </div>
     );
   }
 }
 
-export default Main;
+export default withStyles(classes)(Main);

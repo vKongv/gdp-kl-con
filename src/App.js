@@ -15,8 +15,24 @@ import Main from "./pages/Main/Main";
 // NOTE: This is the default theme, we can change it to suit us. Ref: https://material-ui.com/customization/themes/
 const theme = createMuiTheme({
   palette: {
-    primary: indigo,
-    secondary: pink,
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: '#0d3880',
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      main: '#e60278'
+    },
+    typography: {
+      body3: {
+        color: "rgba(0, 0, 0, 0.87)",
+        fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif',
+        fontSize: "0.875rem",
+        fontWeight: 400,
+        lineHeight: "1.46429em",
+      }
+    },
     error: red,
     // Used by `getContrastText()` to maximize the contrast between the background and
     // the text.
