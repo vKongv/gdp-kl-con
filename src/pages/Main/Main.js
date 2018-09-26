@@ -1,35 +1,15 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { withStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import Typography from '@material-ui/core/Typography';
-import LooksOne from '@material-ui/icons/LooksOne'
-import LooksTwo from '@material-ui/icons/LooksTwo'
-import Looks3 from '@material-ui/icons/Looks3'
-import Looks4 from '@material-ui/icons/Looks4'
-import Looks5 from '@material-ui/icons/Looks5'
+import LooksOne from "@material-ui/icons/LooksOne";
+import LooksTwo from "@material-ui/icons/LooksTwo";
+import Looks3 from "@material-ui/icons/Looks3";
+import Looks4 from "@material-ui/icons/Looks4";
+import Looks5 from "@material-ui/icons/Looks5";
 
 import grid from "./grid_seamless.png";
 import Agenda from "../../components/Agenda/Agenda";
-
-const activeDayStyle = {
-  backgroundColor: "rgba(71, 104, 253, 0.8)",
-  color: "#fff",
-  padding: "30px",
-  textAlign: "center",
-  width: "100%",
-  cursor: "pointer"
-};
-
-const inactiveDayStyle = {
-  backgroundColor: "rgba(71, 104, 253, 0.3)",
-  color: "#fff",
-  padding: "30px",
-  textAlign: "center",
-  width: "100%",
-  cursor: "pointer"
-};
 
 const dayOnePath = "/dayone";
 const dayTwoPath = "/daytwo";
@@ -38,7 +18,6 @@ const dayFourPath = "/dayfour";
 const dayFivePath = "/dayfive";
 
 const classes = theme => {
-  console.log(theme);
   return {
     navBar: {
       bottom: "-2px",
@@ -53,10 +32,10 @@ const classes = theme => {
       color: "#fff"
     },
     title: {
-      color: theme.palette.secondary.main,
+      color: theme.palette.secondary.main
     },
     navLabel: {
-      color: '#fff',
+      color: "#fff",
       fontSize: theme.typography.subheading.fontSize
     }
   };
@@ -72,29 +51,62 @@ class Main extends Component {
 
   componentDidMount() {
     const { location } = this.props;
-    this.fetchSchedule(location.pathname);
+    if (location.pathname === "/") {
+      this.redirectToCurrentDate();
+    } else {
+      this.fetchSchedule(location.pathname);
+    }
   }
 
-  isDayOne = (pathname) => {
+  redirectToCurrentDate = () => {
+    const { history } = this.props;
+    const today = new Date();
+    let newPath = dayOnePath;
+    // If it is October
+    if (today.getMonth() === 9) {
+      const todayDate = today.getDate();
+      const dateToPath = {
+        1: dayOnePath,
+        2: dayTwoPath,
+        3: dayThreePath,
+        4: dayFourPath,
+        5: dayFivePath,
+      }
+      newPath = dateToPath[todayDate] || newPath;
+    }
+    history.replace(newPath);
+    this.fetchSchedule(newPath);
+  };
+
+  isDayOne = pathname => {
     return pathname === dayOnePath;
   };
 
-  fetchSchedule = (pathname) => {
-    let apiPath;
-    switch(pathname) {
-      case dayOnePath: 
-        apiPath = '/data/dayone.json';
+  fetchSchedule = pathname => {
+    let data = [];
+    switch (pathname) {
+      case dayOnePath:
+        data = require("../../data/dayone.json");
         break;
-      case dayTwoPath: 
-        apiPath = '/data/daytwo.json';
+      case dayTwoPath:
+        data = require("../../data/daytwo.json");
+        break;
+      case dayThreePath:
+        data = require("../../data/daythree.json");
+        break;
+      case dayFourPath:
+        data = require("../../data/dayfour.json");
+        break;
+      case dayFivePath:
+        data = require("../../data/dayfive.json");
         break;
       default:
         break;
     }
-    axios.get(apiPath).then(res => {
-      this.setState({ schedules: res.data });
+    this.setState({
+      schedules: data
     });
-  }
+  };
 
   handleChange = (event, value) => {
     const { history, location } = this.props;
@@ -103,15 +115,6 @@ class Main extends Component {
       this.fetchSchedule(value);
     }
   };
-
-  generateDayString = () => {
-    const { location } = this.props;
-    switch(location.pathname) {
-      case dayOnePath: return 'Day One';
-      case dayTwoPath: return 'Day Two';
-      default: return 'Ah you must be from the future';
-    }
-  }
 
   render() {
     const { classes, location } = this.props;
@@ -127,24 +130,21 @@ class Main extends Component {
             height: "100%"
           }}
         >
-            <div
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.5)",
-                height: "100%",
-                paddingTop: "10px",
-                paddingBottom: "10px"
-              }}
-            >
-              <h2>Schedule</h2>
-              <p>KL CON 2018</p>
-            </div>
+          <div
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
+              height: "100%",
+              paddingTop: "10px",
+              paddingBottom: "10px"
+            }}
+          >
+            <h2>Schedule</h2>
+            <p>KL CON 2018</p>
           </div>
-          <Typography variant="display2" gutterBottom align="center" color="primary">
-            {this.generateDayString()}
-          </Typography>
-          <div style={{ marginBottom: '60px' }}>
+        </div>
+        <div style={{ marginBottom: "60px" }}>
           <Agenda schedules={schedules} />
-          </div>
+        </div>
         <BottomNavigation
           className={classes.navBar}
           value={location.pathname}
@@ -154,19 +154,19 @@ class Main extends Component {
             label="Day 1"
             value={dayOnePath}
             classes={{ label: classes.navLabel }}
-            icon={<LooksOne nativeColor="#fff" fontSize="default"/>}
+            icon={<LooksOne nativeColor="#fff" fontSize="default" />}
           />
           <BottomNavigationAction
             label="Day 2"
             value={dayTwoPath}
             classes={{ label: classes.navLabel }}
-            icon={<LooksTwo color="secondary" fontSize="large"/>}
+            icon={<LooksTwo color="secondary" fontSize="large" />}
           />
           <BottomNavigationAction
             label="Day 3"
             value={dayThreePath}
             classes={{ label: classes.navLabel }}
-            icon={<Looks3 nativeColor="#fff" fontSize="large"/>}
+            icon={<Looks3 nativeColor="#fff" fontSize="large" />}
           />
           <BottomNavigationAction
             label="Day 4"
@@ -178,7 +178,7 @@ class Main extends Component {
             label="Day 5"
             value={dayFivePath}
             classes={{ label: classes.navLabel }}
-            icon={<Looks5 nativeColor="#fff" fontSize="large"/>}
+            icon={<Looks5 nativeColor="#fff" fontSize="large" />}
           />
         </BottomNavigation>
       </div>
