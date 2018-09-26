@@ -49,8 +49,12 @@ const App = () => {
     <MuiThemeProvider theme={theme}>
       <Router>
         <Switch>
+          <Route exact path="/" component={Main} />
           <Route path="/dayone" component={Main} />
           <Route path="/daytwo" component={Main} />
+          <Route path="/daythree" component={Main} />
+          <Route path="/dayfour" component={Main} />
+          <Route path="/dayfive" component={Main} />
           <Redirect from="*" to="/dayone" />
         </Switch>
       </Router>

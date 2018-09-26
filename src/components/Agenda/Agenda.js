@@ -6,10 +6,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import Typography from '@material-ui/core/Typography';
 
-const constructTime = time => {
-  return time.split(" ");
-};
-
 const styles = (theme) => ({
   time: {
     fontWeight: theme.typography.fontWeightMedium,

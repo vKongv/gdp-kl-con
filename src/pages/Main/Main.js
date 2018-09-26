@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { withStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
@@ -13,24 +12,6 @@ import Filter5 from "@material-ui/icons/Filter5";
 import grid from "./grid_seamless.png";
 import Agenda from "../../components/Agenda/Agenda";
 
-const activeDayStyle = {
-  backgroundColor: "rgba(71, 104, 253, 0.8)",
-  color: "#fff",
-  padding: "30px",
-  textAlign: "center",
-  width: "100%",
-  cursor: "pointer"
-};
-
-const inactiveDayStyle = {
-  backgroundColor: "rgba(71, 104, 253, 0.3)",
-  color: "#fff",
-  padding: "30px",
-  textAlign: "center",
-  width: "100%",
-  cursor: "pointer"
-};
-
 const dayOnePath = "/dayone";
 const dayTwoPath = "/daytwo";
 const dayThreePath = "/daythree";
@@ -38,7 +19,6 @@ const dayFourPath = "/dayfour";
 const dayFivePath = "/dayfive";
 
 const classes = theme => {
-  console.log(theme);
   return {
     navBar: {
       bottom: "0px",
@@ -79,27 +59,60 @@ class Main extends Component {
 
   componentDidMount() {
     const { location } = this.props;
-    this.fetchSchedule(location.pathname);
+    if (location.pathname === "/") {
+      this.redirectToCurrentDate();
+    } else {
+      this.fetchSchedule(location.pathname);
+    }
   }
+
+  redirectToCurrentDate = () => {
+    const { history } = this.props;
+    const today = new Date();
+    let newPath = dayOnePath;
+    // If it is October
+    if (today.getMonth() === 9) {
+      const todayDate = today.getDate();
+      const dateToPath = {
+        1: dayOnePath,
+        2: dayTwoPath,
+        3: dayThreePath,
+        4: dayFourPath,
+        5: dayFivePath,
+      }
+      newPath = dateToPath[todayDate] || newPath;
+    }
+    history.replace(newPath);
+    this.fetchSchedule(newPath);
+  };
 
   isDayOne = pathname => {
     return pathname === dayOnePath;
   };
 
   fetchSchedule = pathname => {
-    let apiPath;
+    let data = [];
     switch (pathname) {
       case dayOnePath:
-        apiPath = "/data/dayone.json";
+        data = require("../../data/dayone.json");
         break;
       case dayTwoPath:
-        apiPath = "/data/daytwo.json";
+        data = require("../../data/daytwo.json");
+        break;
+      case dayThreePath:
+        data = require("../../data/daythree.json");
+        break;
+      case dayFourPath:
+        data = require("../../data/dayfour.json");
+        break;
+      case dayFivePath:
+        data = require("../../data/dayfive.json");
         break;
       default:
         break;
     }
-    axios.get(apiPath).then(res => {
-      this.setState({ schedules: res.data });
+    this.setState({
+      schedules: data
     });
   };
 
@@ -108,18 +121,6 @@ class Main extends Component {
     if (value !== location.pathname) {
       history.push(value);
       this.fetchSchedule(value);
-    }
-  };
-
-  generateDayString = () => {
-    const { location } = this.props;
-    switch (location.pathname) {
-      case dayOnePath:
-        return "Day One";
-      case dayTwoPath:
-        return "Day Two";
-      default:
-        return "Ah you must be from the future";
     }
   };
 

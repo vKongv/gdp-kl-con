@@ -1,0 +1,44 @@
+[
+  {
+    "time": "8:00 AM",
+    "duration": 120,
+    "title": "Free & Easy",
+    "note": "Just relax and chill",
+    "speakers": []
+  },
+  {
+    "time": "10:00 AM",
+    "duration": 120,
+    "title": "People leaders, how can we help our teams to achieve this mission and purpose? What do we need?",
+    "note": "Closed session",
+    "speakers": ["Jerome"]
+  },
+  {
+    "time": "12:00 PM",
+    "duration": 60,
+    "title": "Lunch",
+    "note": "",
+    "speakers": []
+  },
+  {
+    "time": "1:00 PM",
+    "duration": 60,
+    "title": "Free Time!",
+    "note": "Do whatever you like",
+    "speakers": []
+  },
+  {
+    "time": "2:00 PM",
+    "duration": 60,
+    "title": "A-Z Test - Avoid guessing and be data driven",
+    "note": "Open session for all",
+    "speakers": ["Fernanda", "Rafael"]
+  },
+  {
+    "time": "3:00 PM",
+    "duration": 60,
+    "title": "BuildKite - Introduction to BuildKite and Build Agency",
+    "note": "Open session for all",
+    "speakers": ["Gil"]
+  }
+]
