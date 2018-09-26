@@ -44,7 +44,7 @@ const classes = theme => {
     },
     navSelected: {
       color: "#fff",
-      backgroundColor: '#fa0079',
+      backgroundColor: "#fa0079"
     }
   };
 };
@@ -78,8 +78,8 @@ class Main extends Component {
         2: dayTwoPath,
         3: dayThreePath,
         4: dayFourPath,
-        5: dayFivePath,
-      }
+        5: dayFivePath
+      };
       newPath = dateToPath[todayDate] || newPath;
     }
     history.replace(newPath);
@@ -118,6 +118,10 @@ class Main extends Component {
 
   handleChange = (event, value) => {
     const { history, location } = this.props;
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
     if (value !== location.pathname) {
       history.push(value);
       this.fetchSchedule(value);
