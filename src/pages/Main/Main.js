@@ -4,6 +4,11 @@ import { withStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import Typography from '@material-ui/core/Typography';
+import LooksOne from '@material-ui/icons/LooksOne'
+import LooksTwo from '@material-ui/icons/LooksTwo'
+import Looks3 from '@material-ui/icons/Looks3'
+import Looks4 from '@material-ui/icons/Looks4'
+import Looks5 from '@material-ui/icons/Looks5'
 
 import grid from "./grid_seamless.png";
 import Agenda from "../../components/Agenda/Agenda";
@@ -28,6 +33,9 @@ const inactiveDayStyle = {
 
 const dayOnePath = "/dayone";
 const dayTwoPath = "/daytwo";
+const dayThreePath = "/daythree";
+const dayFourPath = "/dayfour";
+const dayFivePath = "/dayfive";
 
 const classes = theme => {
   console.log(theme);
@@ -141,17 +149,36 @@ class Main extends Component {
           className={classes.navBar}
           value={location.pathname}
           onChange={this.handleChange}
-          showLabels
         >
           <BottomNavigationAction
-            label="Day One"
+            label="Day 1"
             value={dayOnePath}
             classes={{ label: classes.navLabel }}
+            icon={<LooksOne nativeColor="#fff" fontSize="default"/>}
           />
           <BottomNavigationAction
-            label="Day Two"
+            label="Day 2"
             value={dayTwoPath}
             classes={{ label: classes.navLabel }}
+            icon={<LooksTwo color="secondary" fontSize="large"/>}
+          />
+          <BottomNavigationAction
+            label="Day 3"
+            value={dayThreePath}
+            classes={{ label: classes.navLabel }}
+            icon={<Looks3 nativeColor="#fff" fontSize="large"/>}
+          />
+          <BottomNavigationAction
+            label="Day 4"
+            value={dayFourPath}
+            classes={{ label: classes.navLabel }}
+            icon={<Looks4 nativeColor="#fff" fontSize="large" />}
+          />
+          <BottomNavigationAction
+            label="Day 5"
+            value={dayFivePath}
+            classes={{ label: classes.navLabel }}
+            icon={<Looks5 nativeColor="#fff" fontSize="large"/>}
           />
         </BottomNavigation>
       </div>
