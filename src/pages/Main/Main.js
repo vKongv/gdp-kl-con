@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 
 import Filter1 from "@material-ui/icons/Filter1";
 import Filter2 from "@material-ui/icons/Filter2";
@@ -12,9 +13,8 @@ import Filter5 from "@material-ui/icons/Filter5";
 
 import Event from "@material-ui/icons/Event";
 import LocationOn from "@material-ui/icons/LocationOn";
-import Call from "@material-ui/icons/Call";
+import Help from "@material-ui/icons/SettingsPhone";
 
-import grid from "./grid_seamless.png";
 import Agenda from "../../components/Agenda/Agenda";
 import { Typography } from "@material-ui/core";
 
@@ -39,22 +39,20 @@ const classes = theme => {
       color: "#fff"
     },
     emergencyButton: {
-      bottom: "80px",
-      right: "20px",
-      left: 'auto',
+      width: "48px",
+      height: "48px",
+    },
+    emergencyButtonContainer: {
+      bottom: "78px",
+      right: "18px",
+      left: "auto",
       zIndex: "2",
       top: "auto",
       position: "fixed",
       color: "#fff"
     },
-    emergencyContainer: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
     emergencyContent: {
       color: theme.palette.secondary.main
-
     },
     title: {
       color: "#fff",
@@ -91,7 +89,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: '',
+      date: "",
       venue: {},
       schedules: []
     };
@@ -154,7 +152,7 @@ class Main extends Component {
     this.setState({
       date: data.date,
       venue: data.venue,
-      schedules: data.schedules,
+      schedules: data.schedules
     });
   };
 
@@ -175,33 +173,6 @@ class Main extends Component {
     const { schedules, venue, date } = this.state;
     return (
       <div>
-        <div
-          style={{
-            textAlign: "center",
-            backgroundPosition: "right 1px top -4px",
-            backgroundRepeat: "repeat",
-            backgroundImage: `url(${grid})`,
-            height: "100%"
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-              height: "100%",
-              paddingTop: "10px",
-              paddingBottom: "10px"
-            }}
-          >
-            <h2>Schedule</h2>
-            <p>KL CON 2018</p>
-            <div className={classes.emergencyContainer}>
-              <Call nativeColor="#e60278" />
-              <Typography variant="body1" classes={{body1: classes.emergencyContent}}>
-                Need help? Call us.
-              </Typography>
-            </div>
-          </div>
-        </div>
         <div className={classes.extraInfoContainer}>
           <div className={classes.extraInfoContent}>
             <Event nativeColor="#fff" />
@@ -226,9 +197,16 @@ class Main extends Component {
         <div style={{ marginBottom: "60px" }}>
           <Agenda schedules={schedules} />
         </div>
-        <div className={classes.emergencyButton}>
-          <Button variant="fab" color="primary" aria-label="Add" className={classes.button}>
-            <Call />
+        <div className={classes.emergencyButtonContainer}>
+          <Button
+            component={Link}
+            to="/contact-us"
+            variant="fab"
+            aria-label="Need Help?"
+            // color="primary"
+            className={classes.emergencyButton}
+          >
+            <Help fontSize="default" />
           </Button>
         </div>
         <BottomNavigation

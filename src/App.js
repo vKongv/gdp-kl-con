@@ -6,11 +6,11 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
-import indigo from "@material-ui/core/colors/indigo";
-import pink from "@material-ui/core/colors/pink";
+import grid from "./pages/Main/grid_seamless.png";
 import red from "@material-ui/core/colors/red";
 
 import Main from "./pages/Main/Main";
+import ContactUs from "./pages/ContactUs/ContactUs";
 
 // NOTE: This is the default theme, we can change it to suit us. Ref: https://material-ui.com/customization/themes/
 const theme = createMuiTheme({
@@ -47,6 +47,27 @@ const theme = createMuiTheme({
 const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
+      <div
+          style={{
+            textAlign: "center",
+            backgroundPosition: "right 1px top -4px",
+            backgroundRepeat: "repeat",
+            backgroundImage: `url(${grid})`,
+            height: "100%"
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
+              height: "100%",
+              paddingTop: "10px",
+              paddingBottom: "10px"
+            }}
+          >
+            <h2>Schedule</h2>
+            <p>KL CON 2018</p>
+          </div>
+        </div>
       <Router>
         <Switch>
           <Route exact path="/" component={Main} />
@@ -55,6 +76,7 @@ const App = () => {
           <Route path="/daythree" component={Main} />
           <Route path="/dayfour" component={Main} />
           <Route path="/dayfive" component={Main} />
+          <Route path="/contact-us" component={ContactUs} />
           <Redirect from="*" to="/dayone" />
         </Switch>
       </Router>
