@@ -8,9 +8,12 @@ import Filter2 from "@material-ui/icons/Filter2";
 import Filter3 from "@material-ui/icons/Filter3";
 import Filter4 from "@material-ui/icons/Filter4";
 import Filter5 from "@material-ui/icons/Filter5";
+import Event from "@material-ui/icons/Event";
+import LocationOn from "@material-ui/icons/LocationOn";
 
 import grid from "./grid_seamless.png";
 import Agenda from "../../components/Agenda/Agenda";
+import { Typography } from "@material-ui/core";
 
 const dayOnePath = "/dayone";
 const dayTwoPath = "/daytwo";
@@ -32,8 +35,25 @@ const classes = theme => {
       width: "100%",
       color: "#fff"
     },
+    emergencyContent: {
+      color: '#424242',
+    },
     title: {
-      color: theme.palette.secondary.main
+      color: '#fff',
+      marginLeft: '4px'
+    },
+    extraInfoContainer: {
+      backgroundColor: theme.palette.secondary.main,
+      padding: '16px 38px',
+      display: 'flex',
+      justifyContent: 'space-around',
+    },
+    extraInfoContent: {
+      display: 'flex',
+      alignItems: 'center',
+    },
+    extraInfoLocation: {
+      color: '#fff !important',
     },
     navRoot: {
       padding: "10px",
@@ -152,6 +172,26 @@ class Main extends Component {
           >
             <h2>Schedule</h2>
             <p>KL CON 2018</p>
+            <div className={classes.extraInfoContent}>
+              <Event nativeColor="#000" />
+              <Typography variant="body1" classes={{body1: classes.emergencyContent}}>
+                Need help? Call our volunteers.
+              </Typography>
+          </div>
+          </div>
+        </div>
+        <div className={classes.extraInfoContainer}>
+          <div className={classes.extraInfoContent}>
+            <Event nativeColor="#fff" />
+            <Typography variant="body1" classes={{body1: classes.title}}>
+              01 Oct
+            </Typography>
+          </div>
+          <div className={classes.extraInfoContent}>
+            <LocationOn nativeColor="#fff" />
+            <Typography variant="body1" classes={{body1: classes.title}}>
+              <a className={classes.extraInfoLocation} href='https://www.google.com' target='_blank'>GDP KL Office</a>
+            </Typography>
           </div>
         </div>
         <div style={{ marginBottom: "60px" }}>
