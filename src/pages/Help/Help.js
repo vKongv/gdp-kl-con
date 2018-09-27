@@ -16,10 +16,23 @@ const styles = theme => ({
   root: {
     width: "100%",
     maxWidth: 360,
-    margin: 'auto',
+    margin: "auto",
     backgroundColor: theme.palette.background.paper
   }
 });
+
+const wifis = [
+  {
+    title: "GDP KL Office",
+    name: "5Hz-M",
+    password: "fifa14tojs"
+  },
+  {
+    title: "Slate @ The Row",
+    name: "WiFi",
+    password: "Slate444648"
+  },
+];
 
 const contacts = [
   {
@@ -37,16 +50,41 @@ const contacts = [
 const ContactUs = ({ classes }) => (
   <div
     style={{
-      padding: "0 32px"
+      padding: "16px 32px"
     }}
   >
-    <h3>Need help? Contact one of our committees here:</h3>
+    <h3>Need Wifi?</h3>
     <div className={classes.root}>
-      <List style={{
-        marginBottom: '8px'
-      }}>
+      <List
+        style={{
+          marginBottom: "8px"
+        }}
+      >
+        {wifis.map(wifi => (
+          <ListItem divider>
+            <ListItemText
+              primary={wifi.title}
+              secondary={
+                <span>
+                  <span style={{ display: "block" }}>{wifi.name}</span>
+                  <span style={{ display: "block" }}>{wifi.password}</span>
+                </span>
+              }
+            />
+          </ListItem>
+        ))}
+      </List>
+    </div>
+    <h3>Need help?</h3>
+    <p>You can reach out our <b>GDPedia</b> or contact one of our committees here:</p>
+    <div className={classes.root}>
+      <List
+        style={{
+          marginBottom: "8px"
+        }}
+      >
         {contacts.map(contact => (
-          <ListItem dense button>
+          <ListItem dense>
             <Avatar alt={contact.name} src={contact.avatar} />
             <ListItemText primary={contact.name} />
             <ListItemSecondaryAction>
@@ -59,7 +97,13 @@ const ContactUs = ({ classes }) => (
       </List>
     </div>
     <div>
-      <Button fullWidth variant="contained" component={Link} to="/" color="primary">
+      <Button
+        fullWidth
+        variant="contained"
+        component={Link}
+        to="/"
+        color="primary"
+      >
         Back to schedule page
       </Button>
     </div>

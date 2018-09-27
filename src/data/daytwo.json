@@ -25,18 +25,27 @@
       "duration": 120,
       "title": "Product Presentations",
       "note": "Company Profile and Reviews, Roles Insights, SONIC, Education, Jora Local, Discovery",
-      "speakers": ["Mat", "Mariana", "Jacqui", "Rafael", "Rob"]
+      "speakers": ["Mat", "Mariana", "Jacqui", "Rafael", "Rob"],
+      "slido": "https://app2.sli.do/event/0aioaxxz"
     },
     {
       "time": "11:00 AM",
       "duration": 60,
       "title": "Emmett Fireside Chat with Layla",
       "note": "",
-      "speakers": ["Emmett", "Layla"]
+      "speakers": ["Emmett", "Layla"],
+      "slido": "https://app2.sli.do/event/ai36kmcr"
     },
     {
       "time": "12:00 PM",
-      "duration": 60,
+      "duration": 15,
+      "title": "Photo Session",
+      "note": "Gather around and take some great photos!",
+      "speakers": []
+    },
+    {
+      "time": "12:15 PM",
+      "duration": 45,
       "title": "Lunch",
       "note": "",
       "speakers": []

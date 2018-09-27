@@ -13,7 +13,7 @@ import Filter5 from "@material-ui/icons/Filter5";
 
 import Event from "@material-ui/icons/Event";
 import LocationOn from "@material-ui/icons/LocationOn";
-import Help from "@material-ui/icons/SettingsPhone";
+import Help from "@material-ui/icons/ContactSupport";
 
 import Agenda from "../../components/Agenda/Agenda";
 import { Typography } from "@material-ui/core";
@@ -198,10 +198,9 @@ class Main extends Component {
         <div className={classes.emergencyButtonContainer}>
           <Button
             component={Link}
-            to="/contact-us"
+            to="/help"
             variant="fab"
             aria-label="Need Help?"
-            // color="primary"
             className={classes.emergencyButton}
           >
             <Help fontSize="default" />

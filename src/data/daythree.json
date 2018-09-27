@@ -30,8 +30,8 @@
     {
       "time": "10:00 AM",
       "duration": 60,
-      "title": "Playback teams share ideas",
-      "note": "",
+      "title": "Playback teams share ideas & Prioritization",
+      "note": "Voting on ideas",
       "speakers": []
     },
     {
@@ -44,15 +44,15 @@
     {
       "time": "12:00 PM",
       "duration": 60,
-      "title": "Lunch & Prioritization (Voting on Ideas)",
+      "title": "Lunch",
       "note": "",
       "speakers": []
     },
     {
       "time": "1:00 PM",
       "duration": 60,
-      "title": "Technology team rules of play workshop (like Discovery) & Present Back",
-      "note": "",
+      "title": "Technology team rules of play workshop & Present Back",
+      "note": "Similar to how discovery does it",
       "speakers": ["Gil"]
     },
     {

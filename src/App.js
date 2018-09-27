@@ -10,7 +10,7 @@ import grid from "./pages/Main/grid_seamless.png";
 import red from "@material-ui/core/colors/red";
 
 import Main from "./pages/Main/Main";
-import ContactUs from "./pages/ContactUs/ContactUs";
+import Help from "./pages/Help/Help";
 
 // NOTE: This is the default theme, we can change it to suit us. Ref: https://material-ui.com/customization/themes/
 const theme = createMuiTheme({
@@ -18,11 +18,15 @@ const theme = createMuiTheme({
     primary: {
       // light: will be calculated from palette.primary.main,
       main: '#0d3880',
+      light: '#4b61b0',
+      dark: '#001453',
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
     },
     secondary: {
-      main: '#e60278'
+      main: '#e60278',
+      light: '#ff58a7',
+      dark: '#ae004d'
     },
     typography: {
       body3: {
@@ -76,7 +80,7 @@ const App = () => {
           <Route path="/daythree" component={Main} />
           <Route path="/dayfour" component={Main} />
           <Route path="/dayfive" component={Main} />
-          <Route path="/contact-us" component={ContactUs} />
+          <Route path="/help" component={Help} />
           <Redirect from="*" to="/dayone" />
         </Switch>
       </Router>
