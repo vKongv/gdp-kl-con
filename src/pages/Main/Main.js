@@ -41,7 +41,7 @@ const classes = theme => {
     emergencyButton: {
       width: "48px",
       height: "48px",
-      backgroundColor: theme.palette.background.default
+      backgroundColor: theme.palette.grey[100],
     },
     emergencyButtonContainer: {
       bottom: "78px",
@@ -156,10 +156,6 @@ class Main extends Component {
 
   handleChange = (event, value) => {
     const { history, location } = this.props;
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
     if (value !== location.pathname) {
       history.push(value);
       this.fetchSchedule(value);

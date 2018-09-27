@@ -9,7 +9,6 @@ import QuestionAnswer from "@material-ui/icons/QuestionAnswer";
 import Person from "@material-ui/icons/Person";
 
 const styles = theme => {
-  console.log(theme);
   return {
     time: {
       fontWeight: theme.typography.fontWeightMedium,
