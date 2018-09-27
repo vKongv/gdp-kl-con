@@ -53,26 +53,25 @@ const classes = theme => {
       alignItems: 'center',
     },
     emergencyContent: {
-      // color: '#424242',
       color: theme.palette.secondary.main
 
     },
     title: {
-      color: '#fff',
-      marginLeft: '4px'
+      color: "#fff",
+      marginLeft: "4px"
     },
     extraInfoContainer: {
       backgroundColor: theme.palette.secondary.main,
-      padding: '16px 38px',
-      display: 'flex',
-      justifyContent: 'space-around',
+      padding: "16px 38px",
+      display: "flex",
+      justifyContent: "space-around"
     },
     extraInfoContent: {
-      display: 'flex',
-      alignItems: 'center',
+      display: "flex",
+      alignItems: "center"
     },
     extraInfoLocation: {
-      color: '#fff !important',
+      color: "#fff !important"
     },
     navRoot: {
       padding: "10px",
@@ -92,6 +91,8 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      date: '',
+      venue: {},
       schedules: []
     };
   }
@@ -151,7 +152,9 @@ class Main extends Component {
         break;
     }
     this.setState({
-      schedules: data
+      date: data.date,
+      venue: data.venue,
+      schedules: data.schedules,
     });
   };
 
@@ -169,7 +172,7 @@ class Main extends Component {
 
   render() {
     const { classes, location } = this.props;
-    const { schedules } = this.state;
+    const { schedules, venue, date } = this.state;
     return (
       <div>
         <div
@@ -196,20 +199,27 @@ class Main extends Component {
               <Typography variant="body1" classes={{body1: classes.emergencyContent}}>
                 Need help? Call us.
               </Typography>
-          </div>
+            </div>
           </div>
         </div>
         <div className={classes.extraInfoContainer}>
           <div className={classes.extraInfoContent}>
             <Event nativeColor="#fff" />
-            <Typography variant="body1" classes={{body1: classes.title}}>
-              01 Oct
+            <Typography variant="body1" classes={{ body1: classes.title }}>
+              {date}
             </Typography>
           </div>
           <div className={classes.extraInfoContent}>
             <LocationOn nativeColor="#fff" />
-            <Typography variant="body1" classes={{body1: classes.title}}>
-              <a className={classes.extraInfoLocation} href='https://www.google.com' target='_blank'>GDP KL Office</a>
+            <Typography variant="body1" classes={{ body1: classes.title }}>
+              <a
+                className={classes.extraInfoLocation}
+                href={`https://maps.google.com/?q=${venue.lng},${venue.lat}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {venue.name}
+              </a>
             </Typography>
           </div>
         </div>

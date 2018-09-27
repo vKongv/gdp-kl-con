@@ -1,72 +1,81 @@
-[
-  {
-    "time": "8:00 AM",
-    "duration": 30,
-    "title": "Breakfast and Chit-Chat",
-    "note": "",
-    "speakers": []
+{
+  "date": "2nd Oct",
+  "venue": { 
+    "name": "The Slate",
+    "lng": "3.158408",
+    "lat": "101.699556"
   },
-  {
-    "time": "8:30 AM",
-    "duration": 60,
-    "title": "Welcome Greeting",
-    "note": "",
-    "speakers": ["Layla"]
-  },
-  {
-    "time": "9:00 AM",
-    "duration": 120,
-    "title": "Product Presentations",
-    "note": "Company Profile and Reviews, Roles Insights, SONIC, Education, Jora Local, Discovery",
-    "speakers": ["Mat", "Mariana", "Jacqui", "Rafael", "Rob"]
-  },
-  {
-    "time": "11:00 AM",
-    "duration": 60,
-    "title": "Emmett Fireside Chat with Layla",
-    "note": "",
-    "speakers": ["Emmett", "Layla"]
-  },
-  {
-    "time": "12:00 PM",
-    "duration": 60,
-    "title": "Lunch",
-    "note": "",
-    "speakers": []
-  },
-  {
-    "time": "1:00 PM",
-    "duration": 60,
-    "title": "Competitor review Workshop",
-    "note": "",
-    "speakers": ["Eddy"]
-  },
-  {
-    "time": "2:00 PM",
-    "duration": 105,
-    "title": "Workshop: Working together across borders, how can we be better?",
-    "note": "",
-    "speakers": ["Mathew Adams"]
-  },
-  {
-    "time": "3:45 PM",
-    "duration": 15,
-    "title": "Tea break",
-    "note": "",
-    "speakers": []
-  },
-  {
-    "time": "4:00 PM",
-    "duration": 120,
-    "title": "Team building and free activity",
-    "note": "",
-    "speakers": []
-  },
-  {
-    "time": "6:00 PM",
-    "duration": 120,
-    "title": "Dinner",
-    "note": "",
-    "speakers": []
-  }
-]
+  "schedules": [
+    {
+      "time": "8:00 AM",
+      "duration": 30,
+      "title": "Breakfast and Chit-Chat",
+      "note": "",
+      "speakers": []
+    },
+    {
+      "time": "8:30 AM",
+      "duration": 60,
+      "title": "Welcome Greeting",
+      "note": "",
+      "speakers": ["Layla"]
+    },
+    {
+      "time": "9:00 AM",
+      "duration": 120,
+      "title": "Product Presentations",
+      "note": "Company Profile and Reviews, Roles Insights, SONIC, Education, Jora Local, Discovery",
+      "speakers": ["Mat", "Mariana", "Jacqui", "Rafael", "Rob"]
+    },
+    {
+      "time": "11:00 AM",
+      "duration": 60,
+      "title": "Emmett Fireside Chat with Layla",
+      "note": "",
+      "speakers": ["Emmett", "Layla"]
+    },
+    {
+      "time": "12:00 PM",
+      "duration": 60,
+      "title": "Lunch",
+      "note": "",
+      "speakers": []
+    },
+    {
+      "time": "1:00 PM",
+      "duration": 60,
+      "title": "Competitor review Workshop",
+      "note": "",
+      "speakers": ["Eddy"]
+    },
+    {
+      "time": "2:00 PM",
+      "duration": 105,
+      "title": "Workshop: Working together across borders, how can we be better?",
+      "note": "",
+      "speakers": ["Mathew Adams"]
+    },
+    {
+      "time": "3:45 PM",
+      "duration": 15,
+      "title": "Tea break",
+      "note": "",
+      "speakers": []
+    },
+    {
+      "time": "4:00 PM",
+      "duration": 120,
+      "title": "Team building and free activity",
+      "note": "",
+      "speakers": []
+    },
+    {
+      "time": "6:00 PM",
+      "duration": 120,
+      "title": "Dinner",
+      "note": "",
+      "speakers": []
+    }
+  ]
+}
+

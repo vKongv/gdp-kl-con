@@ -1,23 +1,31 @@
-[
-  {
-    "time": "8:00 AM",
-    "duration": 120,
-    "title": "Free & Easy",
-    "note": "Just relax and chill",
-    "speakers": []
+{
+  "date": "5th Oct",
+  "venue": {
+    "name": "GDP KL Office",
+    "lng": "3.155161",
+    "lat": "101.699313"
   },
-  {
-    "time": "10:00 AM",
-    "duration": 60,
-    "title": "AP&A - Paved Road and RFCs",
-    "note": "Open session for all",
-    "speakers": ["Andrew Browne", "Gil"]
-  },
-  {
-    "time": "12:00 PM",
-    "duration": 360,
-    "title": "The end...",
-    "note": "See you in the next conference!",
-    "speakers": []
-  }
-]
+  "schedules": [
+    {
+      "time": "8:00 AM",
+      "duration": 120,
+      "title": "Free & Easy",
+      "note": "Just relax and chill",
+      "speakers": []
+    },
+    {
+      "time": "10:00 AM",
+      "duration": 60,
+      "title": "AP&A - Paved Road and RFCs",
+      "note": "Open session for all",
+      "speakers": ["Andrew Browne", "Gil"]
+    },
+    {
+      "time": "12:00 PM",
+      "duration": 360,
+      "title": "The end...",
+      "note": "See you in the next conference!",
+      "speakers": []
+    }
+  ]
+}
