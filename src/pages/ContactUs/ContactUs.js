@@ -41,7 +41,9 @@ const ContactUs = ({ classes }) => (
   >
     <h3>Need help? Contact one of our committees here:</h3>
     <div className={classes.root}>
-      <List>
+      <List style={{
+        marginBottom: '8px'
+      }}>
         {contacts.map(contact => (
           <ListItem dense button>
             <Avatar alt={contact.name} src={contact.avatar} />
@@ -56,8 +58,8 @@ const ContactUs = ({ classes }) => (
       </List>
     </div>
     <div>
-      <Button component={Link} to="/" color="primary">
-        Back
+      <Button fullWidth variant="contained" component={Link} to="/" color="primary">
+        Back to schedule page
       </Button>
     </div>
   </div>
