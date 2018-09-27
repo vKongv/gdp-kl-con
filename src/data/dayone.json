@@ -1,58 +1,66 @@
-[
-  {
-    "time": "8:00 AM",
-    "duration": 30,
-    "title": "Breakfast",
-    "note": "",
-    "speakers": []
+{
+  "date": "1st Oct",
+  "venue": { 
+    "name": "GDP KL Office",
+    "lng": "3.155161",
+    "lat": "101.699313"
   },
-  {
-    "time": "8:30 AM",
-    "duration": 30,
-    "title": "Getting to know you better!",
-    "note": "",
-    "speakers": []
-  },
-  {
-    "time": "9:00 AM",
-    "duration": 60,
-    "title": "Register yourself & write on purpose wall",
-    "note": "",
-    "speakers": []
-  },
-  {
-    "time": "10:00 AM",
-    "duration": 60,
-    "title": "Get together, KLCON task owners!",
-    "note": "",
-    "speakers": []
-  },
-  {
-    "time": "11:00 AM",
-    "duration": 60,
-    "title": "Ice-breaking activity",
-    "note": "",
-    "speakers": []
-  },
-  {
-    "time": "12:00 PM",
-    "duration": 60,
-    "title": "Lunch",
-    "note": "",
-    "speakers": []
-  },
-  {
-    "time": "1:00 PM",
-    "duration": 165,
-    "title": "Team Sessions",
-    "note": "All team will have their own session in a room",
-    "speakers": ["Mathew Adams", "Jacqui", "Fernanda/Rafael", "Kent", "Nic"]
-  },
-  {
-    "time": "3:45 PM",
-    "duration": 15,
-    "title": "Tea break",
-    "note": "",
-    "speakers": []
-  }
-]
+  "schedules": [
+    {
+      "time": "8:00 AM",
+      "duration": 30,
+      "title": "Breakfast",
+      "note": "",
+      "speakers": []
+    },
+    {
+      "time": "8:30 AM",
+      "duration": 30,
+      "title": "Getting to know you better!",
+      "note": "",
+      "speakers": []
+    },
+    {
+      "time": "9:00 AM",
+      "duration": 60,
+      "title": "Register yourself & write on purpose wall",
+      "note": "",
+      "speakers": []
+    },
+    {
+      "time": "10:00 AM",
+      "duration": 60,
+      "title": "Get together, KLCON task owners!",
+      "note": "",
+      "speakers": []
+    },
+    {
+      "time": "11:00 AM",
+      "duration": 60,
+      "title": "Ice-breaking activity",
+      "note": "",
+      "speakers": []
+    },
+    {
+      "time": "12:00 PM",
+      "duration": 60,
+      "title": "Lunch",
+      "note": "",
+      "speakers": []
+    },
+    {
+      "time": "1:00 PM",
+      "duration": 165,
+      "title": "Team Sessions",
+      "note": "All team will have their own session in a room",
+      "speakers": ["Mathew Adams", "Jacqui", "Fernanda/Rafael", "Kent", "Nic"]
+    },
+    {
+      "time": "3:45 PM",
+      "duration": 15,
+      "title": "Tea break",
+      "note": "",
+      "speakers": []
+    }
+  ]
+}
