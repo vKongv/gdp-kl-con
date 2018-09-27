@@ -2,14 +2,17 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import Button from '@material-ui/core/Button';
 
 import Filter1 from "@material-ui/icons/Filter1";
 import Filter2 from "@material-ui/icons/Filter2";
 import Filter3 from "@material-ui/icons/Filter3";
 import Filter4 from "@material-ui/icons/Filter4";
 import Filter5 from "@material-ui/icons/Filter5";
+
 import Event from "@material-ui/icons/Event";
 import LocationOn from "@material-ui/icons/LocationOn";
+import Call from "@material-ui/icons/Call";
 
 import grid from "./grid_seamless.png";
 import Agenda from "../../components/Agenda/Agenda";
@@ -35,8 +38,24 @@ const classes = theme => {
       width: "100%",
       color: "#fff"
     },
+    emergencyButton: {
+      bottom: "80px",
+      right: "20px",
+      left: 'auto',
+      zIndex: "2",
+      top: "auto",
+      position: "fixed",
+      color: "#fff"
+    },
+    emergencyContainer: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
     emergencyContent: {
-      color: '#424242',
+      // color: '#424242',
+      color: theme.palette.secondary.main
+
     },
     title: {
       color: '#fff',
@@ -172,10 +191,10 @@ class Main extends Component {
           >
             <h2>Schedule</h2>
             <p>KL CON 2018</p>
-            <div className={classes.extraInfoContent}>
-              <Event nativeColor="#000" />
+            <div className={classes.emergencyContainer}>
+              <Call nativeColor="#e60278" />
               <Typography variant="body1" classes={{body1: classes.emergencyContent}}>
-                Need help? Call our volunteers.
+                Need help? Call us.
               </Typography>
           </div>
           </div>
@@ -196,6 +215,11 @@ class Main extends Component {
         </div>
         <div style={{ marginBottom: "60px" }}>
           <Agenda schedules={schedules} />
+        </div>
+        <div className={classes.emergencyButton}>
+          <Button variant="fab" color="primary" aria-label="Add" className={classes.button}>
+            <Call />
+          </Button>
         </div>
         <BottomNavigation
           className={classes.navBar}
