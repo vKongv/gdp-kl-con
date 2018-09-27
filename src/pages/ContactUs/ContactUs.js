@@ -16,6 +16,7 @@ const styles = theme => ({
   root: {
     width: "100%",
     maxWidth: 360,
+    margin: 'auto',
     backgroundColor: theme.palette.background.paper
   }
 });

@@ -41,6 +41,7 @@ const classes = theme => {
     emergencyButton: {
       width: "48px",
       height: "48px",
+      backgroundColor: theme.palette.background.default
     },
     emergencyButtonContainer: {
       bottom: "78px",
@@ -51,15 +52,12 @@ const classes = theme => {
       position: "fixed",
       color: "#fff"
     },
-    emergencyContent: {
-      color: theme.palette.secondary.main
-    },
     title: {
-      color: "#fff",
+      color: "#000",
       marginLeft: "4px"
     },
     extraInfoContainer: {
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: theme.palette.background.default,
       padding: "16px 38px",
       display: "flex",
       justifyContent: "space-around"
@@ -69,7 +67,7 @@ const classes = theme => {
       alignItems: "center"
     },
     extraInfoLocation: {
-      color: "#fff !important"
+      color: "#000 !important"
     },
     navRoot: {
       padding: "10px",
@@ -175,13 +173,13 @@ class Main extends Component {
       <div>
         <div className={classes.extraInfoContainer}>
           <div className={classes.extraInfoContent}>
-            <Event nativeColor="#fff" />
+            <Event nativeColor="#000" />
             <Typography variant="body1" classes={{ body1: classes.title }}>
               {date}
             </Typography>
           </div>
           <div className={classes.extraInfoContent}>
-            <LocationOn nativeColor="#fff" />
+            <LocationOn nativeColor="#000" />
             <Typography variant="body1" classes={{ body1: classes.title }}>
               <a
                 className={classes.extraInfoLocation}
