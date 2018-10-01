@@ -29,7 +29,7 @@ const wifis = [
   },
   {
     title: "Slate @ The Row",
-    name: "WiFi",
+    name: "Slate@therowkl_5G",
     password: "Slate444648"
   },
 ];

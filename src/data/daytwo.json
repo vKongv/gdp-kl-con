@@ -29,6 +29,13 @@
       "slido": "https://app2.sli.do/event/0aioaxxz"
     },
     {
+      "time": "11:00 AM",
+      "duration": 5,
+      "title": "Chris to talk about transition plan",
+      "note": "",
+      "speakers": ["Chris"]
+    },
+    {
       "time": "11:05 AM",
       "duration": 60,
       "title": "Emmett Fireside Chat with Layla",
