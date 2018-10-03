@@ -29,17 +29,10 @@
     },
     {
       "time": "10:00 AM",
-      "duration": 60,
+      "duration": 120,
       "title": "Playback teams share ideas & Prioritization",
       "note": "Voting on ideas",
       "speakers": []
-    },
-    {
-      "time": "11:00 AM",
-      "duration": 60,
-      "title": "AI workshop",
-      "note": "",
-      "speakers": ["Diego", "Emanuel", "Arun"]
     },
     {
       "time": "12:00 PM",
@@ -51,12 +44,19 @@
     {
       "time": "1:00 PM",
       "duration": 60,
+      "title": "AI workshop",
+      "note": "",
+      "speakers": ["Diego", "Emanuel", "Arun"]
+    },
+    {
+      "time": "2:00 PM",
+      "duration": 60,
       "title": "Technology team rules of play workshop & Present Back",
       "note": "Similar to how discovery does it",
       "speakers": ["Gil"]
     },
     {
-      "time": "2:00 PM",
+      "time": "3:00 PM",
       "duration": 105,
       "title": "Strategy and vision session",
       "note": "",
@@ -64,7 +64,14 @@
     },
     {
       "time": "3:45 PM",
-      "duration": 15,
+      "duration": 30,
+      "title": "Volponi award",
+      "note": "",
+      "speakers": ["Jerome"]
+    },
+    {
+      "time": "4:15 PM",
+      "duration": 30,
       "title": "Tea break",
       "note": "",
       "speakers": []

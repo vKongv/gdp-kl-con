@@ -15,6 +15,13 @@
     },
     {
       "time": "10:00 AM",
+      "duration": 60,
+      "title": "Design Systems and SEEK",
+      "note": "Open session",
+      "speakers": ["Jye"]
+    },
+    {
+      "time": "10:00 AM",
       "duration": 120,
       "title": "People leaders, how can we help our teams to achieve this mission and purpose? What do we need?",
       "note": "Closed session",
